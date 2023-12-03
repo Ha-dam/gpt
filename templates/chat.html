@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat Interface</title>
+</head>
+<body>
+    <h1>Chat Interface</h1>
+    <form method="POST" action="/chat_response">
+        <label for="date">Date:</label>
+        <input type="text" name="date" id="date"><br>
+        
+        <label for="location">Location:</label>
+        <input type="text" name="location" id="location"><br>
+        
+        <label for="people">People:</label>
+        <input type="text" name="people" id="people"><br>
+        
+        <label for="happy">Happy:</label>
+        <input type="number" name="happy" id="happy" value="0"><br>
+
+        <label for="comfortable">Comfortable:</label>
+        <input type="number" name="comfortable" id="comfortable" value="0"><br>
+
+        <label for="sad">Sad:</label>
+        <input type="number" name="sad" id="sad" value="0"><br>
+
+        <label for="angry">Angry:</label>
+        <input type="number" name="angry" id="angry" value="0"><br>
+        
+        <label for="experience">Experience:</label>
+        <input type="text" name="experience" id="experience"><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>User Input:</h2>
+    <p>Date: {{ date }}, Location: {{ location }}, People: {{ people }}, Emotion: {{ emotion }}, Experience: {{ experience }}</p>
+
+    <h2>Model Response:</h2>
+    <p>{{ model_response }}</p>
+    <h2>Category</h2>
+    <p>{{ category }}</p>
+</body>
+</html>
