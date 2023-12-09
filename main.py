@@ -1,8 +1,8 @@
 # pip install -q openai
-# pip install --upgrade openai
+# pip install openai==0.28
 # pip install fastapi uvicorn
 # pip install python-dotenv
-# pip install SQLAlchemy
+## pip install SQLAlchemy
 
 from fastapi import FastAPI, Request, Form
 from fastapi.templating import Jinja2Templates
@@ -104,10 +104,10 @@ async def chat_response(
     )
     reply = response.choices[0].message.content
     
-    #SQL 데이터베이스로 데이터 전송 (필요 없으면 생략하기)
-    db = SessionLocal()
-    create_diary_entry(db, reply=reply, category=category)
-    db.close()
+    # #SQL 데이터베이스로 데이터 전송 (필요 없으면 생략하기)
+    # db = SessionLocal()
+    # create_diary_entry(db, reply=reply, category=category)
+    # db.close()
 
     return templates.TemplateResponse("chat.html", {"request": request, "date": date, "location": location, "people": people,
                                                     "happy": happy, "comfortable": comfortable, "sad": sad,
